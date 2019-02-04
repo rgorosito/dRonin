@@ -2,9 +2,9 @@
 
 set -x
 
-thispath=$(dirname $0)
+cd $(dirname $0)
 
-cd $thispath
+. ./config
 
 realparentpath=$(realpath ../)
 podman build -t dronin -v ${realparentpath}:/dRonin.git .
